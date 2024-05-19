@@ -10,10 +10,6 @@ body {
   margin: 0%;
 }
 
-li {
-  list-style: none;
-}
-
 ul {
   list-style-type: none;
   position: relative;
@@ -29,7 +25,8 @@ nav ul li:focus-within > ul {
 }
 
 nav {
-  background-color: rgb(255, 232, 128);
+  /* Magic number works, but looks messy on site  */
+  height: 140px;
 }
 
 nav ul ul {
@@ -40,6 +37,26 @@ nav ul li:hover ul {
   display: inherit;
 }
 
+/* Desktop  View */
+
+@media (min-width: 640px) {
+  nav ul li {
+    display: inline;
+    list-style: none;
+    list-style-type: none;
+  }
+  nav {
+    height: auto;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 844px) {
+  .social.menu {
+    display: none;
+  }
+}
+
 .menu.container {
   border: solid;
   border-color: pink;
@@ -47,10 +64,9 @@ nav ul li:hover ul {
 }
 
 .top.container {
-  display: flex;
-  flex-wrap: wrap;
   border: solid;
   border-color: red;
+  justify-content: center;
 }
 
 .portrait {
@@ -76,6 +92,8 @@ nav ul li:hover ul {
   top: 40%;
   right: 25px;
   transform: translate(-50%);
+  background-color: rgb(252, 248, 229);
+  background: 50%;
 }
 
 .jobs {
